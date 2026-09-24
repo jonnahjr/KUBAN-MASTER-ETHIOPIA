@@ -80,7 +80,7 @@ export function ShowroomVisitForm() {
               autoComplete="name"
               placeholder="Your name"
               {...register("name")}
-              className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors ${errors.name ? "border-red-500/50" : "border-white/10"}`}
+              className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border text-base sm:text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors ${errors.name ? "border-red-500/50" : "border-white/10"}`}
             />
             {errors.name && <p className="text-[11px] text-red-400 mt-1">{errors.name.message}</p>}
           </div>
@@ -95,7 +95,7 @@ export function ShowroomVisitForm() {
               autoComplete="tel"
               placeholder="+251 9X XXX XXXX"
               {...register("phone")}
-              className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors ${errors.phone ? "border-red-500/50" : "border-white/10"}`}
+              className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border text-base sm:text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors ${errors.phone ? "border-red-500/50" : "border-white/10"}`}
             />
             {errors.phone && <p className="text-[11px] text-red-400 mt-1">{errors.phone.message}</p>}
           </div>
@@ -110,7 +110,7 @@ export function ShowroomVisitForm() {
             type="text"
             placeholder="Your business (optional)"
             {...register("company")}
-            className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors"
+            className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-base sm:text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors"
           />
         </div>
 
@@ -123,7 +123,7 @@ export function ShowroomVisitForm() {
               id="visit-date"
               type="date"
               {...register("preferredDate")}
-              className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors"
+              className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-base sm:text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors"
             />
           </div>
 
@@ -134,7 +134,7 @@ export function ShowroomVisitForm() {
             <select
               id="visit-machine"
               {...register("machineInterest")}
-              className="w-full px-4 py-2.5 rounded-lg bg-[var(--coffee-base)] border border-white/10 text-sm text-[#B5C9C7] focus:outline-none focus:border-[#E7A93D]/60 transition-colors"
+              className="w-full px-4 py-2.5 rounded-lg bg-[var(--coffee-base)] border border-white/10 text-base sm:text-sm text-[#B5C9C7] focus:outline-none focus:border-[#E7A93D]/60 transition-colors"
             >
               <option value="">General visit / All machines</option>
               {PRODUCTS.filter((p) => p.inShowroom).map((p) => (
@@ -156,7 +156,7 @@ export function ShowroomVisitForm() {
             rows={3}
             placeholder="Any specific questions or requirements for your visit…"
             {...register("message")}
-            className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors resize-none"
+            className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-base sm:text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors resize-none"
           />
         </div>
 

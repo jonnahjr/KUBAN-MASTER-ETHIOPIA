@@ -204,7 +204,7 @@ export function ProductCard({
           <div className="grid grid-cols-2 gap-2">
             <Link
               href={`/products/${product.slug}`}
-              className={`flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-full text-xs font-bold transition-all ${viewSpecsCls}`}
+              className={`flex items-center justify-center gap-1.5 py-2.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold transition-all ${viewSpecsCls}`}
             >
               <span>View Specs</span>
               <ArrowRight className={`w-3 h-3 ${viewSpecsArrowCls}`} />
@@ -212,7 +212,7 @@ export function ProductCard({
 
             <Link
               href={`/request-quote?machine=${product.slug}`}
-              className={`flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-full text-xs font-bold shadow-md transition-all ${getPriceCls}`}
+              className={`flex items-center justify-center gap-1.5 py-2.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold shadow-md transition-all ${getPriceCls}`}
             >
               <FileText className={`w-3 h-3 ${getPriceIconCls}`} />
               <span>Get Price</span>
@@ -223,7 +223,7 @@ export function ProductCard({
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`w-full flex items-center justify-center gap-1.5 py-2 rounded-full text-[11px] font-bold transition-colors ${whatsappCls}`}
+            className={`w-full flex items-center justify-center gap-1.5 py-2.5 rounded-full text-[11px] font-bold transition-colors ${whatsappCls}`}
           >
             <MessageSquare className={`w-3.5 h-3.5 ${whatsappIconCls}`} />
             <span>Inquire on WhatsApp</span>

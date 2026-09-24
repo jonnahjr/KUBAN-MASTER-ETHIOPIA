@@ -52,15 +52,15 @@ export function Hero() {
       />
 
       {/* ── CONTENT ── */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 pt-36 pb-36">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-5 sm:px-10 lg:px-14 pt-32 pb-24 sm:pt-36 sm:pb-36">
         <div className="max-w-2xl">
-          <motion.p {...fadeUp(0.1)} className="eyebrow text-[#C9933E] mb-6">
+          <motion.p {...fadeUp(0.1)} className="eyebrow text-[#C9933E] mb-4 sm:mb-6">
             Official Kuban Representative
           </motion.p>
 
           <motion.h1
             {...fadeUp(0.2)}
-            className="font-display font-medium text-[#F4EFE6] leading-[1.08] tracking-tight text-4xl sm:text-5xl lg:text-6xl"
+            className="font-display font-medium text-[#F4EFE6] leading-[1.08] tracking-tight text-3xl sm:text-5xl lg:text-6xl"
           >
             Roasting machinery for the{" "}
             <span className="font-display-italic text-gradient-gold-dark">
@@ -70,18 +70,18 @@ export function Hero() {
 
           <motion.p
             {...fadeUp(0.32)}
-            className="text-[#C8B89A] text-sm sm:text-base leading-relaxed max-w-lg mt-6"
+            className="text-[#C8B89A] text-sm sm:text-base leading-relaxed max-w-lg mt-5 sm:mt-6"
           >
             Engineered in İzmir since 1996 — delivered, installed, and supported
             in Addis Ababa.
           </motion.p>
 
-          <motion.div {...fadeUp(0.44)} className="flex flex-wrap items-center gap-4 mt-9">
-            <Link href="/products" className="btn-gold px-8 py-4 text-[11px] group">
+          <motion.div {...fadeUp(0.44)} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-9">
+            <Link href="/products" className="btn-gold w-full sm:w-auto px-8 py-3.5 sm:py-4 text-[11px] group">
               <span>Explore the Machines</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
-            <Link href="/request-quote" className="btn-ghost-on-dark px-6 py-4 text-[11px]">
+            <Link href="/request-quote" className="btn-ghost-on-dark w-full sm:w-auto px-6 py-3.5 sm:py-4 text-[11px]">
               <span>Request a Quote</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>

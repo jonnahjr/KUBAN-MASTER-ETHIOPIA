@@ -169,7 +169,7 @@ export function QuoteWizard({ initialMachineSlug }: QuoteWizardProps) {
   }
 
   return (
-    <div className="bg-[var(--coffee-base)] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl max-w-3xl mx-auto">
+    <div className="bg-[var(--coffee-base)] border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-10 shadow-2xl max-w-3xl mx-auto">
       {/* STEP PROGRESS BAR */}
       <div className="mb-8">
         <div className="flex items-center justify-between text-xs text-[var(--text-muted)] mb-2">

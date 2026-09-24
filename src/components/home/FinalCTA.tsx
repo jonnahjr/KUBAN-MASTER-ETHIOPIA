@@ -66,8 +66,8 @@ export function FinalCTA() {
 
         {/* CTAs */}
         <Reveal delay={180}>
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-            <Link href="/request-quote" className="btn-gold px-8 py-4 text-[11px]">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mt-12 max-w-xl mx-auto">
+            <Link href="/request-quote" className="btn-gold w-full sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 text-[11px]">
               <FileText className="w-4 h-4" />
               <span>Request a Quote</span>
             </Link>
@@ -76,7 +76,7 @@ export function FinalCTA() {
               href={buildWhatsAppLink("general")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-md text-[#E8DCC8] text-xs font-bold uppercase tracking-[0.08em] hover:bg-white/[0.08] hover:border-emerald-500/30 hover:-translate-y-0.5 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-7 sm:py-4 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-md text-[#E8DCC8] text-xs font-bold uppercase tracking-[0.08em] hover:bg-white/[0.08] hover:border-emerald-500/30 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto"
             >
               <MessageSquare className="w-4 h-4 text-[#25D366]" />
               <span>Chat on WhatsApp</span>
@@ -84,7 +84,7 @@ export function FinalCTA() {
 
             <Link
               href="/showroom"
-              className="btn-ghost-on-dark inline-flex items-center gap-2 px-7 py-4 text-[11px]"
+              className="btn-ghost-on-dark inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-7 sm:py-4 text-[11px] w-full sm:w-auto"
             >
               <MapPin className="w-4 h-4 text-[var(--coffee-caramel)]" />
               <span>Visit the Showroom</span>

@@ -47,7 +47,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {(["name", "phone"] as const).map((field) => (
           <div key={field}>
-            <label htmlFor={`contact-${field}`} className="block text-xs font-semibold text-[#B5C9C7] mb-1.5 capitalize">
+            <label htmlFor={`contact-${field}`} className="block text-xs font-semibold text-[#5C4836] mb-1.5 capitalize">
               {field === "name" ? "Full Name *" : "Phone *"}
             </label>
             <input
@@ -56,15 +56,15 @@ export function ContactForm() {
               autoComplete={field}
               placeholder={field === "phone" ? "+251 9X XXX XXXX" : "Your name"}
               {...register(field)}
-              className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors ${errors[field] ? "border-red-500/50" : "border-white/10"}`}
+              className={`w-full px-4 py-2.5 rounded-xl bg-[#FBF9F5] border text-base sm:text-sm text-[#2D1B08] placeholder-[#9C7A55] focus:outline-none focus:border-[#7A4A22] transition-colors ${errors[field] ? "border-red-500/50" : "border-[#E8DEC8]"}`}
             />
-            {errors[field] && <p className="text-[11px] text-red-400 mt-1">{errors[field]?.message}</p>}
+            {errors[field] && <p className="text-[11px] text-red-600 mt-1">{errors[field]?.message}</p>}
           </div>
         ))}
       </div>
 
       <div>
-        <label htmlFor="contact-email" className="block text-xs font-semibold text-[#B5C9C7] mb-1.5">
+        <label htmlFor="contact-email" className="block text-xs font-semibold text-[#5C4836] mb-1.5">
           Email Address (optional)
         </label>
         <input
@@ -73,39 +73,39 @@ export function ContactForm() {
           autoComplete="email"
           placeholder="you@company.com"
           {...register("email")}
-          className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors ${errors.email ? "border-red-500/50" : "border-white/10"}`}
+          className={`w-full px-4 py-2.5 rounded-xl bg-[#FBF9F5] border text-base sm:text-sm text-[#2D1B08] placeholder-[#9C7A55] focus:outline-none focus:border-[#7A4A22] transition-colors ${errors.email ? "border-red-500/50" : "border-[#E8DEC8]"}`}
         />
-        {errors.email && <p className="text-[11px] text-red-400 mt-1">{errors.email.message}</p>}
+        {errors.email && <p className="text-[11px] text-red-600 mt-1">{errors.email.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="contact-subject" className="block text-xs font-semibold text-[#B5C9C7] mb-1.5">Subject *</label>
+        <label htmlFor="contact-subject" className="block text-xs font-semibold text-[#5C4836] mb-1.5">Subject *</label>
         <input
           id="contact-subject"
           type="text"
           placeholder="e.g. Inquiry about Kuban Supreme 6kg"
           {...register("subject")}
-          className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors ${errors.subject ? "border-red-500/50" : "border-white/10"}`}
+          className={`w-full px-4 py-2.5 rounded-xl bg-[#FBF9F5] border text-base sm:text-sm text-[#2D1B08] placeholder-[#9C7A55] focus:outline-none focus:border-[#7A4A22] transition-colors ${errors.subject ? "border-red-500/50" : "border-[#E8DEC8]"}`}
         />
-        {errors.subject && <p className="text-[11px] text-red-400 mt-1">{errors.subject.message}</p>}
+        {errors.subject && <p className="text-[11px] text-red-600 mt-1">{errors.subject.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="contact-message" className="block text-xs font-semibold text-[#B5C9C7] mb-1.5">Message *</label>
+        <label htmlFor="contact-message" className="block text-xs font-semibold text-[#5C4836] mb-1.5">Message *</label>
         <textarea
           id="contact-message"
-          rows={5}
+          rows={4}
           placeholder="Tell us about your business and requirements…"
           {...register("message")}
-          className={`w-full px-4 py-2.5 rounded-lg bg-white/5 border text-sm text-white placeholder-[#4A6664] focus:outline-none focus:border-[#E7A93D]/60 transition-colors resize-none ${errors.message ? "border-red-500/50" : "border-white/10"}`}
+          className={`w-full px-4 py-2.5 rounded-xl bg-[#FBF9F5] border text-base sm:text-sm text-[#2D1B08] placeholder-[#9C7A55] focus:outline-none focus:border-[#7A4A22] transition-colors resize-none ${errors.message ? "border-red-500/50" : "border-[#E8DEC8]"}`}
         />
-        {errors.message && <p className="text-[11px] text-red-400 mt-1">{errors.message.message}</p>}
+        {errors.message && <p className="text-[11px] text-red-600 mt-1">{errors.message.message}</p>}
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-[#E7A93D] to-[#b37532] hover:from-[#d89b5b] hover:to-[#E7A93D] text-white text-sm font-bold shadow-lg shadow-[#E7A93D]/20 transition-all disabled:opacity-60 cursor-pointer"
+        className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-gradient-to-b from-[#6B3F1D] to-[#4A2B12] hover:from-[#7D4922] hover:to-[#5C3418] text-[#FBF9F5] text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg shadow-[#6B3F1D]/20 transition-all disabled:opacity-60 cursor-pointer"
       >
         {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
         {isSubmitting ? "Sending…" : "Send Message via WhatsApp"}

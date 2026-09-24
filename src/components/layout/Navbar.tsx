@@ -306,7 +306,7 @@ export function Navbar() {
         />
 
         <div
-          className={`absolute bottom-3 right-3 top-3 flex w-full flex-col justify-between overflow-y-auto rounded-[28px] border border-[#2D1B08]/10 bg-white/95 px-6 pb-8 pt-6 shadow-[0_30px_80px_-20px_rgba(45,27,8,0.35)] backdrop-blur-2xl transition-transform duration-300 ease-out sm:w-[420px] ${
+          className={`absolute inset-y-3 right-3 left-3 sm:left-auto flex sm:w-[400px] flex-col justify-between overflow-y-auto rounded-[24px] sm:rounded-[28px] border border-[#2D1B08]/10 bg-white/95 px-5 sm:px-6 pb-8 pt-5 shadow-[0_30px_80px_-20px_rgba(45,27,8,0.35)] backdrop-blur-2xl transition-transform duration-300 ease-out ${
             mobileOpen ? "translate-x-0" : "translate-x-[110%]"
           }`}
         >

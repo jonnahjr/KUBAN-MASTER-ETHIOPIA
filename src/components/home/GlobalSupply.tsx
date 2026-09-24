@@ -20,7 +20,7 @@ export function GlobalSupply() {
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
           {/* LEFT: IMAGE */}
-          <Reveal className="lg:col-span-6 relative order-2 lg:order-1">
+          <Reveal className="lg:col-span-6 relative order-2 lg:order-1 mb-10 lg:mb-0">
             <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden border border-[#E8DEC8] shadow-[0_32px_70px_-30px_rgba(45,27,8,0.35)]">
               <Image
                 src="/images/kuban-ref/ZOOM9580-cp.png"

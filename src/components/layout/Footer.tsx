@@ -306,7 +306,7 @@ export function Footer() {
                 Machinery by Kuban Makina · İzmir, Türkiye · Est. 1996
               </p>
             </div>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2">
               <Link href="/privacy" className="hover:text-[#E8C98A] transition-colors duration-200">
                 Privacy Policy
               </Link>
