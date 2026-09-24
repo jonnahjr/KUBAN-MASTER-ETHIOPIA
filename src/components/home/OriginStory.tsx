@@ -114,7 +114,7 @@ export function OriginStory() {
                   loop
                   muted
                   playsInline
-                  preload="metadata"
+                  preload="none"
                   aria-label="Kuban cafe roaster in action at the Sarbet showroom"
                 />
                 {/* Warm cream wash so the frame sits with the light section */}

@@ -126,7 +126,7 @@ export function AfterSalesEvents() {
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="none"
                 aria-label="Kuban Base 5kg shop roaster in action"
               />
               {/* Subtle espresso edge wash */}

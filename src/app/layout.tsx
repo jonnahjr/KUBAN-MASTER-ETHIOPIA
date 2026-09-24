@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/hero/hero_kuban_roaster.jpg",
+        url: "/images/logo/main-logo.png",
         width: 1200,
         height: 630,
         alt: "Kuban Coffee Roasters in Ethiopia",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: COMPANY.seo.defaultTitle,
     description: COMPANY.seo.defaultDescription,
-    images: ["/images/hero/hero_kuban_roaster.jpg"],
+    images: ["/images/logo/main-logo.png"],
   },
   robots: {
     index: true,

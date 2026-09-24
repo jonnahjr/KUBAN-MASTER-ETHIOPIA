@@ -138,7 +138,7 @@ export function Navbar() {
             >
               <div className="relative flex h-12 w-auto items-center sm:h-14 lg:h-16">
                 <Image
-                  src="/images/logo/kuban-logo-tight.png"
+                  src="/images/logo/main-logo.png"
                   alt="Kuban Master Ethiopia - Coffee Processing Machinery & Solutions"
                   height={72}
                   width={220}
@@ -314,7 +314,7 @@ export function Navbar() {
           <div className="flex items-center justify-between border-b border-[#2D1B08]/[0.08] pb-5">
             <Link href="/" onClick={() => setMobileOpen(false)}>
               <Image
-                src="/images/logo/kuban-logo-tight.png"
+                src="/images/logo/main-logo.png"
                 alt="Kuban Master Ethiopia"
                 height={50}
                 width={160}

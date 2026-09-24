@@ -149,7 +149,7 @@ export function Footer() {
               <Link href="/" className="group block focus:outline-none mb-2 w-full flex justify-center">
                 <div className="relative flex items-center justify-center">
                   <Image
-                    src="/images/logo/kuban-logo-tight.png"
+                    src="/images/logo/main-logo.png"
                     alt="Kuban Master Ethiopia"
                     width={280}
                     height={88}
