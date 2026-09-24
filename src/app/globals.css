@@ -1,0 +1,824 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:ital,opsz,wght@0,14..32,300..800&display=swap");
+@import "tailwindcss";
+
+/* ============================================================
+   KUBAN MASTER ETHIOPIA — LUXURY DESIGN SYSTEM v2
+   Minimalist · Modern · Classic
+   ============================================================ */
+
+@theme {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* ── ESPRESSO DARK SCALE ── */
+    --coffee-darkest:  #1A1414;  /* deepest espresso  */
+    --coffee-dark:     #2B2222;  /* primary dark bg   */
+    --coffee-base:     #3A2B2B;  /* dark panels        */
+    --coffee-panel:    #4A3535;  /* lifted surfaces    */
+    --coffee-medium:   #6B3F1D;  /* mid brown accent   */
+
+    /* ── WARM CREAM SCALE ── */
+    --cream-pure:      #FFFDF9;
+    --cream-light:     #FBF7F1;
+    --cream-base:      #F4EFE6;  /* primary light bg  */
+    --cream-soft:      #EBE3D7;
+    --cream-border:    #CFC3B0;
+
+    /* ── ACCENT COFFEE TONES ── */
+    --coffee-brown:    #7A4A22;  /* warm coffee brown  */
+    --muted-tan:       #8A6535;  /* deep latte tan (legible on cream) */
+    --coffee-caramel:  #B37E2E;  /* caramel highlight  */
+
+    /* ── LEGACY ALIASES ── */
+    --gold:            #7A4A22;
+    --copper:          #B08A56;
+
+    /* ── SEMANTIC ROLES — LIGHT CREAM THEME ── */
+    --bg-primary:      #FBF9F5;          /* base: creamy white  */
+    --bg-secondary:    #F4EFE6;          /* alt: warm cream     */
+    --text-primary:    #2D1B08;          /* on light: espresso  */
+    --text-secondary:  #5C4836;          /* on light: mid brown */
+    --text-muted:      #8A7460;          /* on light: warm taupe */
+    --text-dark:       #2D1B08;          /* legacy: espresso    */
+    --text-dark-muted: #6B4F32;          /* legacy: mid brown   */
+    --text-dark-soft:  #9C7A55;          /* legacy: latte       */
+    /* Dark-section helpers (kept for contrast sections) */
+    --dark-section:    #221B1B;
+    --dark-section-deep: #1A1414;
+    --dark-text:       #F4EFE6;
+    --dark-text-muted: #A89070;
+
+    --font-heading: "Fraunces", ui-serif, Georgia, serif;
+    --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+  /* ── LIGHT SECTION TYPOGRAPHY DEFAULTS ── */
+  /* Any section/div with a cream background gets coffee-brown text automatically */
+  .section-light,
+  [data-theme="light"] {
+    color: var(--text-dark);
+  }
+  .section-light h1, .section-light h2, .section-light h3, .section-light h4,
+  [data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3, [data-theme="light"] h4 {
+    color: var(--text-dark);
+  }
+  .section-light p,
+  [data-theme="light"] p {
+    color: var(--text-dark-muted);
+  }
+
+/* Selection: espresso on cream */
+  ::selection {
+    background: #7A4A22;
+    color: #FFFDF9;
+  }
+
+  /* Luxury thin scrollbar — light cream */
+  ::-webkit-scrollbar       { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #FBF9F5; }
+  ::-webkit-scrollbar-thumb {
+    background: #D8CCBC;
+    border-radius: 4px;
+    border: 1px solid #FBF9F5;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7A4A22;
+  }
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+.font-display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-optical-sizing: auto;
+}
+
+/* Small-caps eyebrow label */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   GRADIENTS
+   ============================================================ */
+
+.bg-gradient-coffee-hero {
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -5%, rgba(122,74,34,0.18) 0%, transparent 60%),
+    linear-gradient(180deg, #2B2222 0%, #2B2222 50%, #3A2B2B 100%);
+}
+
+.bg-gradient-coffee-card {
+  background: linear-gradient(135deg, rgba(61,36,16,0.96) 0%, rgba(45,27,8,0.96) 100%);
+}
+
+/* Coffee-caramel text gradient — legible on light cream */
+.text-gradient-gold {
+  background: linear-gradient(100deg, #8A5A28 0%, #B37E2E 30%, #6B3F1D 60%, #B37E2E 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldSheen 7s ease-in-out infinite;
+}
+
+/* Gold gradient variant for DARK sections */
+.text-gradient-gold-dark {
+  background: linear-gradient(100deg, #E8C98A 0%, #C9933E 30%, #A0702A 60%, #C9933E 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldSheen 7s ease-in-out infinite;
+}
+
+.text-gradient-copper {
+  background: linear-gradient(135deg, #E8C98A 10%, #B08A56 55%, #8A6535 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes goldSheen {
+  0%,100% { background-position: 0% center; }
+  50%      { background-position: 100% center; }
+}
+
+/* ============================================================
+   BUTTONS — minimal, refined
+   ============================================================ */
+
+/* Primary: Coffee Brown solid */
+.btn-gold {
+  position: relative;
+  border-radius: 4px;
+  background: var(--coffee-brown);
+  color: var(--cream-pure);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--coffee-brown);
+}
+.btn-gold:hover {
+  background: var(--coffee-darkest);
+  border-color: var(--coffee-brown);
+  color: var(--cream-pure);
+}
+.btn-gold:active { transform: translateY(0) scale(0.98); }
+
+/* Ghost: works on light cream surfaces */
+.btn-ghost-gold {
+  border-radius: 4px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(122, 74, 34, 0.35);
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-ghost-gold:hover {
+  background: #FFFFFF;
+  border-color: var(--coffee-brown);
+  color: var(--coffee-brown);
+}
+.btn-ghost-gold:active { transform: translateY(0) scale(0.98); }
+
+/* Ghost variant for DARK sections */
+.btn-ghost-on-dark {
+  border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #F4EFE6;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-ghost-on-dark:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(232, 201, 138, 0.6);
+  color: #E8C98A;
+}
+
+/* Glass gold (legacy compat) */
+.btn-glass-gold,
+.btn-pill-glass {
+  border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-glass-gold:hover,
+.btn-pill-glass:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* Cream / light primary (legacy) */
+.btn-cream,
+.btn-light-primary {
+  border-radius: 4px;
+  background-color: var(--cream-base);
+  color: var(--bg-primary);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--cream-base);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-cream:hover,
+.btn-light-primary:hover {
+  background-color: transparent;
+  color: var(--cream-base);
+}
+
+/* Legacy aliases */
+.btn-coffee-primary {
+  border-radius: 4px;
+  background-color: var(--bg-primary);
+  color: var(--cream-base);
+  font-weight: 500;
+  border: 1px solid var(--bg-primary);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-coffee-primary:hover {
+  background-color: var(--coffee-base);
+}
+
+/* ============================================================
+   BUTTONS — dark pills for cream surfaces, gold outlines for dark
+   ============================================================ */
+
+.btn-primary,
+.btn-dark {
+  border-radius: 4px;
+  background-color: var(--bg-primary);
+  color: var(--cream-pure);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--bg-primary);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover,
+.btn-dark:hover {
+  background-color: transparent;
+  color: var(--bg-primary);
+}
+
+.btn-primary:active,
+.btn-dark:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-outline-dark {
+  border-radius: 4px;
+  border: 1px solid var(--bg-primary);
+  color: var(--bg-primary);
+  background: transparent;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--bg-primary);
+  color: var(--cream-pure);
+}
+
+.btn-outline-gold {
+  border-radius: 4px;
+  border: 1px solid var(--muted-tan);
+  color: var(--cream-pure);
+  background: transparent;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline-gold:hover {
+  border-color: var(--coffee-brown);
+  background: rgba(167, 123, 74, 0.05);
+}
+
+/* ============================================================
+   MICRO ANIMATIONS & UTILITIES
+   ============================================================ */
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise-in {
+  animation: rise-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(212, 163, 89, 0.25);
+  border-radius: 9999px;
+  border: none;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ============================================================
+   CARDS & SURFACES
+   ============================================================ */
+
+.card-hover-lift {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 27, 8, 0.08);
+}
+
+.card-hover-lift-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: rgba(216, 204, 188, 0.2);
+}
+
+/* Glass panel on dark */
+.panel-glass {
+  background: linear-gradient(160deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.018) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(242,179,61,0.14);
+}
+
+.panel-gold-border {
+  position: relative;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#0A2628, #0A2628) padding-box,
+    linear-gradient(135deg, rgba(242,179,61,0.5), rgba(242,179,61,0.06) 40%, rgba(242,179,61,0.3)) border-box;
+}
+
+/* ============================================================
+   LUXURY DETAILS
+   ============================================================ */
+
+/* Film grain overlay */
+.texture-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* Hairline gold divider */
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(242,179,61,0.45) 20%, rgba(242,179,61,0.45) 80%, transparent);
+}
+
+/* Thin gold line — left-to-right grow */
+.line-gold {
+  height: 1px;
+  background: linear-gradient(90deg, #F2B33D, transparent);
+  transform-origin: left;
+}
+
+/* Animated underline nav link */
+.link-luxury {
+  position: relative;
+}
+.link-luxury::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, #F7C85C, #C8922E);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-luxury:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Nav link — refined version */
+.nav-link {
+  position: relative;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,239,228,0.65);
+  transition: color 0.3s ease;
+  padding: 0.25rem 0;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -1px;
+  width: 100%; height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-link:hover { color: #F5EFE4; }
+.nav-link:hover::after,
+.nav-link.active::after { transform: scaleX(1); transform-origin: left; }
+.nav-link.active { color: #F7C85C; }
+
+/* ============================================================
+   EDITORIAL V3 UTILITIES — new home design vibe
+   ============================================================ */
+
+/* Giant outline display text (hero backdrop, section ornaments) */
+.text-outline-espresso {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(122, 74, 34, 0.22);
+}
+.text-outline-cream {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(244, 239, 230, 0.14);
+}
+
+/* Numbered editorial marker */
+.marker-num {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--muted-tan);
+}
+
+/* Marquee ticker band */
+.ticker-mask {
+  mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+}
+
+/* Coffee-ring watermark ornament */
+.coffee-ring {
+  border: 1.5px dashed rgba(122, 74, 34, 0.25);
+  border-radius: 9999px;
+}
+.coffee-ring-dark {
+  border: 1.5px dashed rgba(232, 201, 138, 0.22);
+  border-radius: 9999px;
+}
+
+/* Horizontal scroll snap row (machine index, mobile) */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-snap-x > * {
+  scroll-snap-align: start;
+}
+
+/* Tabular numerals for stats/specs */
+.nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-from-down  { transform: translateY(-24px); }
+.reveal-from-left  { transform: translateX(-32px); }
+.reveal-from-right { transform: translateX(32px); }
+.reveal-from-fade  { transform: none; }
+.reveal-from-scale { transform: scale(0.95); }
+
+.reveal-visible.reveal-from-down,
+.reveal-visible.reveal-from-left,
+.reveal-visible.reveal-from-right,
+.reveal-visible.reveal-from-fade,
+.reveal-visible.reveal-from-scale { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ============================================================
+   CLIP-PATH TEXT REVEAL
+   ============================================================ */
+
+.clip-reveal {
+  clip-path: inset(0 100% 0 0);
+  animation: clipReveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation-delay: var(--clip-delay, 0ms);
+}
+@keyframes clipReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee-x {
+  animation: marquee-x 42s linear infinite;
+  will-change: transform;
+}
+.marquee-hover-pause:hover .animate-marquee-x {
+  animation-play-state: paused;
+}
+
+/* ============================================================
+   MICRO ANIMATIONS
+   ============================================================ */
+
+/* Slow spin for ornaments */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 24s linear infinite; }
+
+/* Soft float */
+@keyframes float-soft {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.animate-float-soft { animation: float-soft 7s ease-in-out infinite; }
+
+/* Cinematic slow zoom */
+@keyframes kenburns {
+  0%   { transform: scale(1.0); }
+  100% { transform: scale(1.08); }
+}
+.animate-kenburns { animation: kenburns 22s ease-in-out infinite alternate; }
+
+/* Fade up in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* Progress bar fill */
+@keyframes fillProgress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Gold shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Pulse dot */
+@keyframes pulseDot {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%     { opacity: 0.5; transform: scale(0.85); }
+}
+.animate-pulse-dot { animation: pulseDot 2s ease-in-out infinite; }
+
+/* ============================================================
+   GLOBAL ROUNDED BUTTONS (PILL STYLE) — LIGHT THEME
+   ============================================================ */
+
+.btn-gold,
+a.btn-gold,
+button.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px !important;
+  background: linear-gradient(180deg, #6B3F1D 0%, #4A2B12 100%);
+  color: #FBF9F5;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(122, 74, 34, 0.6);
+  box-shadow: 0 4px 14px rgba(45, 27, 8, 0.18);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold:hover,
+a.btn-gold:hover,
+button.btn-gold:hover {
+  background: linear-gradient(180deg, #7D4922 0%, #5C3418 100%);
+  border-color: #8A6535;
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(45, 27, 8, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-ghost-gold,
+a.btn-ghost-gold,
+button.btn-ghost-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px !important;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  color: #2D1B08;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(122, 74, 34, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-ghost-gold:hover,
+a.btn-ghost-gold:hover,
+button.btn-ghost-gold:hover {
+  background-color: #FFFFFF;
+  border-color: #7A4A22;
+  color: #7A4A22;
+  transform: translateY(-1px);
+}
+
+/* Force all buttons, pill controls, and form submission buttons to be very rounded */
+button:not([role="tab"]):not([aria-expanded]):not(.keep-sharp),
+input[type="submit"],
+input[type="button"],
+.btn-pill,
+.rounded-btn {
+  border-radius: 9999px !important;
+}
+
+/* ============================================================
+   BUTTON SIDE SHADOW — every button casts side shadows on hover
+   ============================================================ */
+
+.btn-gold,
+a.btn-gold,
+button.btn-gold,
+.btn-ghost-gold,
+a.btn-ghost-gold,
+button.btn-ghost-gold,
+.btn-ghost-on-dark,
+.btn-primary,
+.btn-dark,
+.btn-outline-dark,
+.btn-outline-gold,
+.btn-glass-gold,
+.btn-pill-glass,
+.btn-cream,
+.btn-light-primary,
+.btn-coffee-primary,
+button:not([role="tab"]):not([aria-expanded]):not(.keep-sharp),
+input[type="submit"],
+input[type="button"] {
+  transition: box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+
+.btn-gold:hover,
+a.btn-gold:hover,
+button.btn-gold:hover,
+.btn-ghost-gold:hover,
+a.btn-ghost-gold:hover,
+button.btn-ghost-gold:hover,
+.btn-ghost-on-dark:hover,
+.btn-primary:hover,
+.btn-dark:hover,
+.btn-outline-dark:hover,
+.btn-outline-gold:hover,
+.btn-glass-gold:hover,
+.btn-pill-glass:hover,
+.btn-cream:hover,
+.btn-light-primary:hover,
+.btn-coffee-primary:hover,
+button:not([role="tab"]):not([aria-expanded]):not(.keep-sharp):hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  box-shadow:
+    -12px 0 24px -10px rgba(201, 147, 62, 0.55),
+    12px 0 24px -10px rgba(201, 147, 62, 0.55),
+    0 10px 24px -10px rgba(45, 27, 8, 0.4) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-x,
+  .animate-spin-slow,
+  .animate-float-soft,
+  .animate-kenburns,
+  .animate-fade-up,
+  .animate-rise-in,
+  .text-gradient-gold,
+  .clip-reveal { animation: none !important; }
+}
+
